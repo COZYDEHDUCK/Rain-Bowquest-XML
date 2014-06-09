@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<map proto="1.3.2">
+	<name>Rainbow Quest</name>
+	<version>1.0.0</version>
+	<objective>Eliminate everyone on the other team within 5 minutes!</objective>
+	<include src="tutorial.xml"/>
+	<tutorial>
+		<stage title="`aBlitz: Rage">
+			<message>
+				<line>This is a `4`lBlitz: Rage `rgamemode map. You have a `9`l1-Hit Kill `rSword and Bow.</line>
+				<line>`You have 1 lifes. `rUpon death, you will respawn with another life. `a`lGood Luck!</line>
+			</message>
+		</stage>
+	</tutorial>
+	<authors>
+		<author>buckteeth96 and COZYDEHDUCK</author>
+	</authors>
+	<contributors>
+		<contributor contribution="XML">COZYDEHDUCK</contributor>
+	</contributors>
+	<teams>
+		<team color="red" max="32">Red Team</team>
+		<team color="yellow" max="32">Yellow Team</team>
+		<team color="green" max="32">Green Team</team>
+		<team color="blue" max="32">Blue Team</team>
+	</teams>
+	<rage/>
+	<blitz>
+		<time>5m</time>
+		<lives>2</lives>
+		<title>Blitz: Rage</title>
+	</blitz>
+	<hunger>
+    	<depletion>off</depletion>
+	</hunger>
+	<kits>
+		<kit name="spawn">
+			<item slot="0" enchantment="damage all:1000" name="`4`l1-Hit kill!">diamond sword</item>
+			<item slot="1" enchantment="arrow damage:1000" name="`4`l1-Shot Kill!">bow</item>
+			<item slot="2" amount="1">arrow</item>
+			<item slot="3" amount="8">cookie</item>
+			<potion duration="5" amplifier="4">damage resistance</potion>
+		</kit>
+		<kit name="red" parents="spawn">
+			<chestplate color="993333">leather chestplate</chestplate>
+			<boots color="993333">leather boots</boots>
+		</kit>
+		<kit name="yellow" parents="spawn">
+			<chestplate color="E5E533">leather chestplate</chestplate>
+			<boots color="E5E533">leather boots</boots>
+		</kit>
+		<kit name="green" parents="spawn">
+			<chestplate color="7FCC19">leather chestplate</chestplate>
+			<boots color="7FCC19">leather boots</boots>
+		</kit>
+		<kit name="blue" parents="spawn">
+			<chestplate color="6699D8">leather chestplate</chestplate>
+			<boots color="6699D8">leather boots</boots>
+	</kits>
+	<spawns>
+		<spawn team="red" kit="red" yaw="0">
+			<cuboid min="1083,1,-593" max="1080,1,-596"/>
+		</spawn>
+		<spawn team="yellow" kit="yellow" yaw="90">
+			<cuboid min="1114,1,-559" max="1117,1,-562"/>
+		</spawn>
+		<spawn team="blue" kit="blue" yaw="-90">
+			<cuboid min="1050,1,-562" max="1047,1,-559"/>
+		</spawn>
+		<spawn team="green" kit="green" yaw="180">
+			<cuboid min="1080,1,-529" max="1083,1,-526"/>
+		</spawn>
+		<default yaw="90">
+			<cylinder base="1081,1,-560" radius="1" height="0"/>
+		</default>
+	</spawns>
+	<filters>
+		<filter name="only-leaves">
+			<block>leaves</block>
+		</filter>
+	</filters>
+	<regions>
+		<apply block="only-leaves">
+			<rectangle name="map" min="-oo,-oo" max="oo,oo"/>
+		</apply>
+	</regions>
+	<killreward>
+		<item amount="1">arrow</item>
+	</killreward>
+	<toolrepair>
+		<tool>diamond sword</tool>
+		<tool>bow</tool>
+	</toolrepair>
+	<itemremove>
+		<item>leather chestplate</item>
+		<item>leather boots</item>
+	</itemremove>
+	<timelock>on</timelock>
+	<include src="../blitz-global.xml"/>
+</map>
